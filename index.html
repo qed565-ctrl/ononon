@@ -102,23 +102,27 @@ footer {
     padding: 30px;
     font-size: 14px;
 }
-/* 📱 모바일 버전 */
 @media (max-width: 768px) {
 
     .header {
-        padding: 15px 20px;
+        flex-direction: column;   /* ⬅ 세로 배치 */
+        align-items: flex-start;  /* 왼쪽 정렬 */
     }
 
-    .logo img {
-        height: 32px;
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;          /* 줄바꿈 허용 */
+        justify-content: flex-start;
+        margin-top: 10px;
     }
 
     .menu a {
-        margin-left: 12px;
+        margin: 5px 15px 5px 0;
         font-size: 14px;
+        white-space: nowrap;      /* 글자 쪼개짐 방지 */
     }
 }
-
 </style>
 </head>
 
@@ -182,6 +186,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
