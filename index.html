@@ -6,49 +6,41 @@
 <title>온 하우징</title>
 
 <style>
-.header {
-    display: flex;                 /* 가로로 배치 */
-    justify-content: space-between; /* 좌측 / 우측 */
-    align-items: center;           /* 세로 가운데 */
-    padding: 15px 40px;
-    background-color: #111;
-}
-
-.logo a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-}    
-    
-.menu a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.menu a:hover {
-    color: #cccccc;
-}
-
-/* 전체 기본 */
+/* ===== 기본 ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f5f5f5;
 }
 
-/* 상단 메뉴 */
-nav a {
+/* ===== 상단 메뉴 ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #111;
+}
+
+.logo a {
     color: white;
-    margin-right: 20px;
     text-decoration: none;
+    font-size: 16px;
+}
+
+.menu a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 15px;
     font-weight: bold;
 }
 
-/* 메인 이미지 */
+.menu a:hover {
+    color: #cccccc;
+}
+
+/* ===== 메인 이미지 ===== */
 .hero {
     position: relative;
 }
@@ -76,85 +68,86 @@ nav a {
     border-radius: 5px;
 }
 
-/* 시공사례 영역 */
+/* ===== 시공사례 ===== */
 .section {
-    padding: 50px;
-    background: white;
-}
-.cards {
-    display: flex;
-    gap: 20px;
-}
-.card {
-     width: 100%;
-    max-width: 320px;
-    padding: 15px;
-    text-align: center;
-}
-.card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    object-fit: contain;
+    padding: 60px 20px;
+    background: #fff;
 }
 
-.card p {
-    margin: 4px 0;
-    font-size: 14px;
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
 }
-/* 푸터 */
+
+/* 카드 정렬 */
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 카드 스타일 (ELION 타입) */
+.card.brand {
+    width: 260px;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 카드 이미지 */
+.card.brand img {
+    width: 120px;      /* ⭐ 이미지 크기 핵심 */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* 카드 제목 */
+.card.brand h3 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+/* 카드 설명 */
+.card.brand .desc {
+    font-size: 14px;
+    color: #333;
+}
+
+/* ===== 푸터 ===== */
 footer {
     background: #222;
     color: #aaa;
     padding: 30px;
     font-size: 14px;
 }
+
+/* ===== 모바일 ===== */
 @media (max-width: 768px) {
 
     .header {
-        flex-direction: column;   /* ⬅ 세로 배치 */
-        align-items: center;  /* 왼쪽 정렬 */
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin-top: 10px;
+        flex-direction: column;
     }
-    .card {
-        width: 100%;
-        max-width: 350px;
-       background: white;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
-    } 
-    .cards {
-    flex-direction: column;
-    align-items: center;
-}
-    .card p {
-    margin: 4px 0;   /* 위아래 여백 줄이기 */
-    font-size: 14px;
-}
-    .card img {
-    display: block;      /* 이미지 아래 공백 제거 */
-    margin-bottom: 10px;
-    width: 100%;
-    max-height: 100px;
-    object-fit: contain;
-}
+
     .menu {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;          /* 줄바꿈 허용 */
-        justify-content: center;
         margin-top: 10px;
     }
 
-    .menu a {
-        margin: 5px 15px 5px 0;
-        font-size: 14px;
-        white-space: nowrap;      /* 글자 쪼개짐 방지 */
+    .card.brand {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .card.brand img {
+        width: 100px;
+    }
+
+    .card.brand h3 {
+        font-size: 24px;
     }
 }
 </style>
@@ -164,16 +157,14 @@ footer {
 
 <!-- 상단 메뉴 -->
 <header class="header">
-    <!-- 왼쪽 로고 -->
     <div class="logo">
         <a href="#">ON하우징</a>
     </div>
 
-    <!-- 오른쪽 메뉴 -->
     <nav class="menu">
         <a href="#">ABOUT US</a>
         <a href="#">PRODUCT</a>
-        <a href="#">PORTPOLIO</a>
+        <a href="#">PORTFOLIO</a>
         <a href="#">견적문의</a>
     </nav>
 </header>
@@ -193,25 +184,25 @@ footer {
     <h2>최근 시공 사례</h2>
 
     <div class="cards">
-        <div class="card">
-            <img src="elion.png">
-            <p>oo동 oo아파트</p>
-            <p>oo 평형 ㅣ 평당 00만원</p>
-            <p>1,500 만원</p>
+        <div class="card brand">
+            <img src="elion.png" alt="ELION">
+            <h3>ELION</h3>
+            <p class="desc">oo아파트</p>
+            <p>oo 평형 ㅣ 평당 oo만원</p>
         </div>
 
-        <div class="card">
-            <img src="elion.png">
-            <p>oo동 oo아파트</p>
-            <p>oo 평형 ㅣ 평당 00만원</p>
-            <p>2,000 만원</p>
+        <div class="card brand">
+            <img src="elion.png" alt="ELION">
+            <h3>ELION</h3>
+            <p class="desc">oo아파트</p>
+            <p>oo 평형 ㅣ 평당 oo만원</p>
         </div>
 
-        <div class="card">
-            <img src="elion.png">
-           <p>oo동 oo아파트</p>
-            <p>oo 평형 ㅣ 평당 00만원</p>
-            <p>2,500 만원</p>
+        <div class="card brand">
+            <img src="elion.png" alt="ELION">
+            <h3>ELION</h3>
+            <p class="desc">oo아파트</p>
+            <p>oo 평형 ㅣ 평당 oo만원</p>
         </div>
     </div>
 </div>
@@ -219,31 +210,9 @@ footer {
 <!-- 푸터 -->
 <footer>
     <p>온하우징</p>
-    <p>주 소 : 부산광역시 부산진구 가야대로 767, 8층(부전동,정근안과병원)
+    <p>주소 : 부산광역시 부산진구 가야대로 767, 8층</p>
     <p>Copyright © ALL RIGHTS RESERVED.</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
